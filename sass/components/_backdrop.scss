@@ -7,3 +7,8 @@
   background: rgba(0, 0, 0, 0.2);
   transition: all 1000ms linear;
 }
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
