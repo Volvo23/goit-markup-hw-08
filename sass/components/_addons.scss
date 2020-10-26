@@ -1,6 +1,14 @@
 .addons {
   padding-top: 47px;
   padding-bottom: 94px;
+  display: none;
+
+  @media screen and (min-width: 1200px) {
+    & {
+      display: block;
+    }
+  }
+
   &__title {
     font-style: normal;
     font-weight: bold;

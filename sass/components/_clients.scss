@@ -1,49 +1,81 @@
 .clients {
-  padding-bottom: 94px;
-  padding-top: 94px;
+  padding-bottom: 60px;
+  padding-top: 60px;
 
-  &-title {
+  @media screen and (min-width: 1200px) {
+    & {
+      padding-bottom: 94px;
+      padding-top: 94px;
+    }
+  }
+
+  &__title {
     font-style: normal;
     font-weight: bold;
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 28px;
+    line-height: 1.18px;
     text-align: center;
     letter-spacing: 0.03em;
     color: $title-text-color;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    &__title {
+      font-size: 36px;
+      line-height: 1.17;
+      margin-bottom: 50px;
+    }
   }
 
   &__list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: -15px;
   }
 
-  &__list-item {
-    width: 170px;
-    height: 90px;
+  &__item {
     border: 1px solid #afb1b8;
     box-sizing: border-box;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 90px;
   }
 
-  &__list-item:hover,
-  &__list-item:focus {
+  @media screen and (min-width: 768px) {
+    &__item {
+      width: calc((100% - 3 * 30px) / 3);
+      margin: 15px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &__item {
+      width: calc((100% - 6 * 30px) / 6);
+      margin: 15px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    &__item {
+      width: calc((100% - 2 * 30px) / 2);
+      margin: 15px;
+    }
+  }
+
+  &__item:hover,
+  &__item:focus {
     border-color: #2196f3;
   }
 
-  &__list-icon {
+  &__icon {
     fill: rgba(175, 177, 184, 1);
   }
 
-  &__list-item:hover &__list-icon {
-    fill: $text-hover-focus;
-    transition: 250ms $time-distribution-function;
-  }
-
-  &__list-item:focus &__list-icon {
+  &__item:hover &__icon,
+  &__item:focus &__icon {
     fill: $text-hover-focus;
     transition: 250ms $time-distribution-function;
   }

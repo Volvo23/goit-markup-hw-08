@@ -1,30 +1,107 @@
 .main {
+  width: 100%;
+  padding-top: 118px;
+  padding-bottom: 118px;
+
+  background-color: #c4c4c4;
   background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
+      rgba(47, 48, 58, 0.5),
+      rgba(47, 48, 58, 0.5)
     ),
-    url("../icons/Imghero.jpg");
+    url("../../img/8dz/hero/mhero@2x.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  text-align: center;
-  padding-bottom: 200px;
-  padding-top: 200px;
+  background-position: center;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: url("../../img/8dz/hero/mhero@2x.jpg");
+    }
+  }
+
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    & {
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.5),
+          rgba(47, 48, 58, 0.5)
+        ),
+        url("../../img/8dz/hero/thero.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: url("../../img/8dz/hero/thero@2x.jpg");
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    & {
+      background-image: linear-gradient(
+          rgba(47, 48, 58, 0.5),
+          rgba(47, 48, 58, 0.5)
+        ),
+        url("../../img/8dz/hero/dhero.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: url("../../img/8dz/hero/dhero@2x.jpg");
+    }
+  }
+
+  &__content {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+
+    text-align: center;
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) {
+      &__content {
+        width: 360px;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      &__content {
+        width: 696px;
+      }
+    }
+  }
 
   &__title {
-    font-size: 44px;
-    font-style: normal;
+    margin-top: 0px;
+    margin-bottom: 30px;
+
+    color: $secondary-text-color;
     font-weight: 900;
+    font-size: 44px;
     line-height: 1.36;
     letter-spacing: 0.06em;
-
     text-transform: uppercase;
-    color: $secondary-text-color;
-    margin-bottom: 40px;
+
+    @media screen and (max-width: 1199px) {
+      &__title {
+        font-size: 26px;
+        line-height: 1.61;
+      }
+    }
   }
 
   &__button {
-    /* margin-left: auto;
-  margin-right: auto; */
     display: inline-block;
     min-width: 200px;
     height: 50px;
@@ -34,8 +111,6 @@
     font-weight: bold;
     font-size: 16px;
     line-height: 1.875;
-    /* display: flex;
-  align-items: center; */
     text-align: center;
     letter-spacing: 0.06em;
     color: $white-color;
