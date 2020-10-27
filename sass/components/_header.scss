@@ -1,8 +1,24 @@
 .header {
   border-bottom: 1px solid #ececec;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
 
-  &__webstudio {
-    width: 145px;
+  @media screen and (min-width: 768px) {
+    & {
+      padding-top: 21px;
+      padding-bottom: 21px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    & {
+      padding-top: 24px;
+      padding-bottom: 25px;
+    }
+  }
+
+  &__logo {
     height: 31px;
     color: #000000;
     text-decoration: none;
@@ -13,136 +29,29 @@
     line-height: 1.19;
     /* identical to box height */
     letter-spacing: 0.03em;
-    margin-right: 93px;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 767px) {
+    &__logo {
+      z-index: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &__logo {
+      margin-right: 88px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &__logo {
+      width: 145px;
+    }
   }
 
   &__studio {
     color: #2196f3;
-  }
-  &__menu {
-    display: flex;
-    max-width: 294px;
-  }
-
-  &__menu .link {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-    color: $title-text-color;
-    text-decoration: none;
-    position: relative;
-    display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
-
-  &__menu &__special {
-    color: $text-hover-focus;
-  }
-
-  &__menu .link:hover,
-  &__menu .link:focus {
-    color: $text-hover-focus;
-    transition: 250ms $time-distribution-function;
-  }
-
-  &__menu .link::after {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 4px;
-
-    background: $text-hover-focus;
-    border-radius: 2px;
-    transform: scaleX(0);
-    transition: 250ms $time-distribution-function;
-  }
-  &__special .link::after {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 4px;
-    background: $text-hover-focus;
-    border-radius: 2px;
-    transform: scaleX(1);
-  }
-  &__menu &__special::after {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 4px;
-
-    background: $text-hover-focus;
-    border-radius: 2px;
-    transform: scaleX(1);
-  }
-
-  &__menu .link:hover::after,
-  &__menu .link:focus::after {
-    transform: scaleX(1);
-  }
-  &__item:not(:last-child) {
-    margin-right: 50px;
-  }
-
-  &__auth-item {
-    color: var(--primary-text-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-  }
-
-  &__auth-item:hover,
-  &__auth-item:focus {
-    color: $text-hover-focus;
-    transition: 250ms $time-distribution-function;
-  }
-
-  &__container {
-    display: flex;
-    align-items: flex-start;
-    align-items: center;
-  }
-
-  &__menu {
-    display: flex;
-    max-width: 294px;
-  }
-
-  &__auth {
-    display: flex;
-    margin-left: auto;
-  }
-
-  &__auth-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  &__auth-icon {
-    margin-right: 10px;
-    fill: var(--primary-text-color);
-  }
-
-  &__auth-item:hover &__auth-icon {
-    fill: $text-hover-focus;
-  }
-
-  &__auth-item_phone {
-    margin-left: 50px;
   }
 }
 
@@ -152,20 +61,59 @@
   padding: 0;
   border: none;
   background-color: transparent;
+
+  @media screen and (min-width: 768px) {
+    & {
+      display: none;
+    }
+  }
+
+  & .icon-close {
+    display: none;
+  }
+
+  &.is-open .icon-close {
+    display: block;
+  }
+
+  &.is-open .icon-menu {
+    display: none;
+  }
 }
-.menu-button .icon-close {
-  display: none;
-}
-.menu-button .is-open .icon-close {
-  display: block;
-}
-.menu-button .is-open .icon-menu {
-  display: none;
-}
+
 .menu-container {
+  display: none;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin: 0 auto;
   position: absolute;
-  left: 0;
   top: 100%;
+  left: 0;
   width: 100%;
-  text-align: center;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+    0px 1px 3px rgba(0, 0, 0, 0.16);
+
+  @media screen and (min-width: 768px) {
+    & {
+      padding: 0;
+      position: static;
+      box-shadow: none;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+
+    @media screen and (min-width: 768px) {
+      & {
+        display: none;
+      }
+    }
+  }
 }

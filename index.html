@@ -17,31 +17,39 @@
 
   <header class="header">
     <div class="header__container container">
+      <nav class="navigation">
+        <a class="header__logo" href="./index.html" aria-label="логотип">Web<span class="header__studio">Studio</span></a>
+        <button type="button" class="menu-button is-open" aria-expanded="false" aria-controls="menu-container"
+          data-menu-button>
+          <svg class="menu-svg" width="40" height="40" aria-label="Переключатель мобильного меню">
+            <use class="icon-close" href="./icons/sprite.svg#closemenu"></use>
+            <use class="icon-menu" href="./icons/sprite.svg#openmenu"></use>
+          </svg>
+        </button>
+        <div class="menu-container" data-menu>
+          <ul class="navigation__list list">
+            <li class="navigation__item"><a href="./index.html"
+                class="navigation__link navigation__link_special">Студия</a></li>
+            <li class="navigation__item"><a href="./portfolio.html" class="navigation__link">Портфолио</a></li>
+            <li class="navigation__item"><a href="#Контакты" class="navigation__link">Контакты</a></li>
+          </ul>
   
-      <a class="header__webstudio" href="./index.html" aria-label="логотип">Web<span
-          class="header__studio">Studio</span></a>
-  
-  
-      <ul class="header__menu list">
-        <li class="header__item"><a href="./index.html" class="header__special link">Студия</a></li>
-        <li class="header__item"><a href="./portfolio.html" class=" link">Портфолио</a></li>
-        <li class="header__item"><a href="#Контакты" class="link">Контакты</a></li>
-      </ul>
-  
-  
-      <ul class="header__auth list">
-        <li><a href="mailto:info@devstudio.com" class="header__auth-item header__auth-item_mail">
-            <svg class="header__auth-icon" width="16px" height="12">
-              <use href="./icons/sprite.svg#icon-envelope"></use>
-            </svg>
-            info@devstudio.com</a></li>
-        <li><a href="tel:+380961111111" class="header__auth-item header__auth-item_phone">
-            <svg class="header__auth-icon" width="16px" height="12">
-              <use href="./icons/sprite.svg#icon-smartphone"></use>
-            </svg>
-            +38 096 111 11 11</a></li>
-      </ul>
-  
+          <ul class="auth-nav list">
+            <li><a href="mailto:info@devstudio.com" class="auth-nav__item auth-nav__item_email">
+                <svg class="auth-nav__icon" width="14px" height="10px">
+                  <use href="./icons/sprite.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com</a>
+            </li>
+            <li><a href="tel:+380961111111" class="auth-nav__item auth-nav__item_tel">
+                <svg class="auth-nav__icon" width="10px" height="14px">
+                  <use href="./icons/sprite.svg#icon-smartphone"></use>
+                </svg>
+                +38 096 111 11 11</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </header>
 
