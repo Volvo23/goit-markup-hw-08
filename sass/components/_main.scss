@@ -26,7 +26,7 @@
           rgba(47, 48, 58, 0.5),
           rgba(47, 48, 58, 0.5)
         ),
-        url("../../img/hero/thero.jpg");
+        url("../img/8dz/hero/thero.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -36,7 +36,7 @@
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     & {
-      background-image: url("../../img/hero/thero@2x.jpg");
+      background-image: url("../img/hero/thero@2x.jpg");
     }
   }
 
@@ -48,7 +48,7 @@
           rgba(47, 48, 58, 0.5),
           rgba(47, 48, 58, 0.5)
         ),
-        url("../../img/hero/dhero.jpg");
+        url("../img/8dz/hero/dhero.jpg");
       background-size: cover;
       background-position: center;
     }
@@ -58,7 +58,7 @@
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     & {
-      background-image: url("../../img/hero/dhero@2x.jpg");
+      background-image: url("../img/8dz/hero/dhero@2x.jpg");
     }
   }
 
@@ -88,15 +88,15 @@
 
     color: $secondary-text-color;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+    font-size: 26px;
+    line-height: 1.61;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 
-    @media screen and (max-width: 1199px) {
+    @media screen and (min-width: 1200px) {
       &__title {
-        font-size: 26px;
-        line-height: 1.61;
+        font-size: 44px;
+        line-height: 1.36;
       }
     }
   }
