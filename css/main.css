@@ -1301,17 +1301,17 @@ body {
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (min-width: 1200px) {
   .footer-subscribe__input {
-    margin-bottom: 0px;
     width: 358px;
+    margin-bottom: 0;
   }
 }
 
-@media screen and (min-width: 480px) and (min-width: 1200px) {
+@media screen and (min-width: 480px) and (max-width: 1199px) {
   .footer-subscribe__input {
-    width: 450px;
     margin-bottom: 20px;
+    width: 450px;
   }
 }
 

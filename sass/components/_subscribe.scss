@@ -36,17 +36,17 @@
     margin-bottom: 20px;
   }
 
-  @media screen and (max-width: 1199px) {
+  @media screen and (min-width: 1200px) {
     &__input {
-      margin-bottom: 0px;
       width: 358px;
+      margin-bottom: 0;
     }
   }
 
-  @media screen and (min-width: 480px) and (min-width: 1200px) {
+  @media screen and (min-width: 480px) and (max-width: 1199px) {
     &__input {
-      width: 450px;
       margin-bottom: 20px;
+      width: 450px;
     }
   }
 
