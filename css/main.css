@@ -208,6 +208,34 @@ body {
   margin-left: 50px;
 }
 
+.menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.menu-button .icon-close {
+  display: none;
+}
+
+.menu-button .is-open .icon-close {
+  display: block;
+}
+
+.menu-button .is-open .icon-menu {
+  display: none;
+}
+
+.menu-container {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  text-align: center;
+}
+
 .addons {
   padding-top: 47px;
   padding-bottom: 94px;
@@ -590,20 +618,20 @@ body {
   padding-top: 118px;
   padding-bottom: 118px;
   background-color: #c4c4c4;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.5), rgba(47, 48, 58, 0.5)), url("../../img/8dz/hero/mhero@2x.jpg");
+  background-image: linear-gradient(rgba(47, 48, 58, 0.5), rgba(47, 48, 58, 0.5)), url("../img/8dz/hero/mhero.jpg");
   background-size: cover;
   background-position: center;
 }
 
 @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .main {
-    background-image: url("../../img/8dz/hero/mhero@2x.jpg");
+    background-image: url("../img/8dz/hero/mhero@2x.jpg");
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .main {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.5), rgba(47, 48, 58, 0.5)), url("../../img/8dz/hero/thero.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.5), rgba(47, 48, 58, 0.5)), url("../../img/hero/thero.jpg");
     background-size: cover;
     background-position: center;
   }
@@ -611,7 +639,7 @@ body {
 
 @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .main {
-    background-image: url("../../img/8dz/hero/thero@2x.jpg");
+    background-image: url("../../img/hero/thero@2x.jpg");
   }
 }
 
@@ -621,7 +649,7 @@ body {
     padding-bottom: 200px;
   }
   .main {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.5), rgba(47, 48, 58, 0.5)), url("../../img/8dz/hero/dhero.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.5), rgba(47, 48, 58, 0.5)), url("../../img/hero/dhero.jpg");
     background-size: cover;
     background-position: center;
   }
@@ -629,7 +657,7 @@ body {
 
 @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
   .main {
-    background-image: url("../../img/8dz/hero/dhero@2x.jpg");
+    background-image: url("../../img/hero/dhero@2x.jpg");
   }
 }
 
@@ -1027,7 +1055,7 @@ body {
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project__info-title {
+.projects__title {
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -1037,13 +1065,13 @@ body {
   letter-spacing: 0.06em;
 }
 
-.project__info {
+.projects__info {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 30px;
   /* identical to box height, or 187% */
-  color: var(--main-text-color);
+  color: #757575;
   letter-spacing: 0.03em;
 }
 
@@ -1053,29 +1081,42 @@ body {
   justify-content: space-between;
 }
 
-.project__item {
+.projects__item {
   display: block;
-  width: 370px;
   background: #ffffff;
   border: 1px solid #eeeeee;
   box-sizing: border-box;
+  width: 450px;
 }
 
-.project__item:hover, .project__item:focus {
+.projects__item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .projects__item {
+    width: 354px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .projects__item {
+    width: 370px;
+  }
+  .projects__item:not(:nth-child(n + 7)) {
+    margin-bottom: 30px;
+  }
+}
+
+.projects__item:hover, .projects__item:focus {
   background: #ffffff;
   border: 1px solid #eeeeee;
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.project__item:not(:nth-child(n + 7)) {
-  margin-bottom: 30px;
-}
-
-.project__info {
-  margin: 0 24px;
-  padding-bottom: 20px;
-  padding-top: 20px;
+.projects__container {
+  padding: 20px 24px;
 }
 
 .projects__overlay {
@@ -1083,15 +1124,15 @@ body {
   overflow: hidden;
 }
 
-.project__paragraph {
+.projects__paragraph {
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 1.55;
   letter-spacing: 0.03em;
   color: #ffffff;
   position: absolute;
-  top: 0;
+  top: 0.5px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -1101,8 +1142,8 @@ body {
   padding: 63px 24px;
 }
 
-.project__item:hover .project__paragraph,
-.project__item:focus .project__paragraph {
+.projects__item:hover .projects__paragraph,
+.projects__item:focus .projects__paragraph {
   transform: translateY(0);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
